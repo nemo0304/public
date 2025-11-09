@@ -1,0 +1,82 @@
+/*
+Hlavní css soubor pro stylování obsahu
+*/
+
+/*Vydefinování proměnných - custom properties*/
+:root{
+
+    --background-primary-color: #fcae00;
+    --background-secondary-color: #fff5ca;
+    --background-terciary-color: #fffae6;
+
+    --text-primary-color: #040404;
+    --text-secondary-color: #a36f38;
+    --text-terciary-color: #ffe066;
+    
+    --neutral-primary-color: #5A5A5A;
+    --neutral-secondary-color: #757575;
+    --neutral-terciary-color: #b3b3b3;
+
+    --border-primary-color: #303030;
+    --border-secundary-color: #767676;
+    --border-terciary-color: #d9d9d9;
+
+    --icon-primary-color: #040404;
+
+    --font-familiy-primary: 'Nunito', sans-serif;
+
+    --font-size-hero: 72px;
+    --font-size-h1: 48px;
+    --font-size-h2: 32px;
+    --font-size-h3: 24px;
+    --font-size-p: 16px;
+    --font-size-small: 14px;
+
+    --font-weight-hero: 700;
+    --font-weight-h1: 700;
+    --font-weight-h2: 400;
+    --font-weight-h3: 700;
+    --font-weight-p-primary: 400;
+    --font-weight-p-bold: 400;
+    --font-weight-small: 400;
+}
+
+.hero-h1{
+    font-family: var(--font-familiy-primary);
+    font-size: var(--font-size-hero);
+    font-weight: var(--font-weight-hero);
+    color: var(--text-primary-color);
+}
+h1 {
+    font-family: var(--font-familiy-primary);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-h1);
+    color: var(--text-primary-color);
+}
+h2 {
+    font-family: var(--font-familiy-primary);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-h2);
+    color: var(--text-primary-color);
+}
+h3 {
+    font-family: var(--font-familiy-primary);
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-h3);
+    color: var(--text-primary-color);
+}
+
+p{
+    font-family: var(--font-familiy-primary);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-body-primary);
+    color: var(--text-primary-color);
+}
+
+small {
+    font-family: var(--font-familiy-primary);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-small);
+    color: var(--text-primary-color);
+}
+

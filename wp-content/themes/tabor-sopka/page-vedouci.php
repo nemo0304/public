@@ -1,0 +1,3 @@
+<?php
+// Vedoucí, zdravotníci, kuchyně
+?>
