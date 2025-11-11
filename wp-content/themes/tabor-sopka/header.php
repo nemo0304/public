@@ -7,7 +7,7 @@
 </head>
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <header class="navigace-header">
+    <header class="header">
         <div class="header-container">
 
             <div class="nazev-proklik">
@@ -28,8 +28,8 @@
                 ?>
             </nav>
 
-            <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">
-                <span class="hamburger-icon"></span>
+            <button class="menu-hamburger" aria-controls="site-navigation" aria-expanded="false">
+                <span class="hamburger-ikona"></span>
             </button>
         </div>
     </header>
