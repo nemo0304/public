@@ -1,4 +1,2 @@
-<?php
-// Informace o přihlášce, cena, storno
-?>
+<?php get_header(); ?>
 <p>Přihláška a platba<p>

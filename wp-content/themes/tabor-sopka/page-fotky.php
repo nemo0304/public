@@ -1,4 +1,2 @@
-<?php
-// Archivní galerie po ročnících
-?>
+<?php get_header(); ?>
 <p>Fotky<p>

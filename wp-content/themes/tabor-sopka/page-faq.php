@@ -1,5 +1,2 @@
-<?php
-// Často kladené otázky, kontaktní formulář
-?>
-
+<?php get_header(); ?>
 <p>FAQ<p>

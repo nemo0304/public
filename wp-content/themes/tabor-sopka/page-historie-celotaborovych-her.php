@@ -1,4 +1,2 @@
-<?php
-// Infografika s vývojem her
-?>
+<?php get_header(); ?>
 <p>Historie celotáborových her<p>

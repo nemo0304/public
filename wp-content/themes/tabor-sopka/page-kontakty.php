@@ -1,4 +1,2 @@
-<?php
-// Kontakty na vedení, provozovatele, bankovní spojení
-?>
+<?php get_header(); ?>
 <p>Kontakty<p>

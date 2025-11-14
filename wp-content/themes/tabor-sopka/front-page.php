@@ -2,6 +2,4 @@
 
 <p>Landing page<p>
 
-
-
 <?php get_footer(); ?>

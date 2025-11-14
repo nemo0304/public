@@ -1,4 +1,2 @@
-<?php
-// Vedoucí, zdravotníci, kuchyně
-?>
+<?php get_header(); ?>
 <p>Vedoucí<p>

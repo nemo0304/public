@@ -1,4 +1,2 @@
-<?php
-// Popis areálu, ubytování, vybavení
-?>
+<?php get_header(); ?>
 <p>Areál a okolí<p>

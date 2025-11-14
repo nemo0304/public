@@ -1,4 +1,2 @@
-<?php
-// dokumenty ke stažení
-?>
+<?php get_header(); ?>
 <p>Dokumenty<p>

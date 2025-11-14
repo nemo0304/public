@@ -1,4 +1,2 @@
-<?php
-// Denní režim, aktivity, celotáborová hra
-?>
+<?php get_header(); ?>
 <p>Harmonogram a program<p>

@@ -1,4 +1,2 @@
-<?php
-// Téma celotáborové hry, termín, věk, místo, cena
-?>
+<?php get_header(); ?>
 <p>Aktuální ročník<p>
