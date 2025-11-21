@@ -1,0 +1,102 @@
+
+/*základní barvy*/
+$primary:       #fcae00;
+$secondary:     #a36f38;
+$terciary:      #ffe066;
+$black:         #040404;
+
+/*barvy background*/
+$sopka-primary-bg:       $primary;
+$sopka-secondary-bg:   #fff5ca;
+$sopka-terciary-bg:    #fffae6;
+
+/*barvy textu*/
+$sopka-primary-text:     $black;
+$sopka-secondary-text:   $secondary;
+$sopka-terciary-text:    $terciary;
+
+/*barvy neutralní*/
+$sopka-neutral-primary:    #5A5A5A;
+$sopka-neutral-secondary:  #757575;
+$sopka-neutral-terciary:   #b3b3b3;
+
+
+/*font*/
+$font-family-sans-serif:  'Nunito', sans-serif;
+
+/*velikosti písma*/
+$font-site-base: 1rem;
+
+$h1-font-size: 3rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.5rem;
+$small-font-size: 0.875rem;
+
+/*tloušťky písma*/
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+/*barva písma*/
+$body-color: $black;
+
+
+
+/*import funkcí*/
+@import "../bootstrap/functions";
+
+/*import proměnných*/
+@import "../bootstrap/variables";
+
+@import "../bootstrap/variables-dark";
+@import "../bootstrap/maps";
+
+/*import mixinů - responzivita*/
+@import "../bootstrap/mixins";
+
+/*import pomocných tříd- spacing apod.*/
+@import "../bootstrap/utilities";
+
+@import "../bootstrap/root";
+@import "../bootstrap/reboot";
+@import "../bootstrap/type";
+@import "../bootstrap/images";
+@import "../bootstrap/containers";
+@import "../bootstrap/grid";
+
+@import "../bootstrap/buttons";
+@import "../bootstrap/forms";
+@import "../bootstrap/nav";
+@import "../bootstrap/navbar";
+@import "../bootstrap/card";
+@import "../bootstrap/accordion";
+@import "../bootstrap/transitions";
+@import "../bootstrap/close";
+@import "../bootstrap/modal";
+@import "../bootstrap/offcanvas";
+@import "../bootstrap/tables";
+
+@import "../bootstrap/helpers";
+@import "../bootstrap/utilities/api";
+@import "gutenberg";
+
+.hero-h1{
+    font-size: 4.5rem;
+    font-weight: $font-weight-bold;
+    color: $black;
+}
+
+h1{
+    color: $black;
+    font-weight: $font-weight-bold;
+}
+
+h2{
+    color: $sopka-neutral-secondary;
+    font-weight: $font-weight-normal;
+}
+
+h3{
+    color: $sopka-secondary-text;
+    font-weight: $font-weight-bold;
+}
+

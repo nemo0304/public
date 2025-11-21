@@ -3,20 +3,16 @@
 /**načítání stylů šablony */
 function tabor_sopka_enqueue_assets(){
 
-    /* načtení bootstrap css */
-      wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '5.3.8', 'all');
+
 
     /* načtení Nunito fontu */
-      wp_enqueue_style('nunito-font', 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap', array('bootstrap-css'), null);
+     wp_enqueue_style('nunito-font', 'https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap', array(), null);
 
-    /* Načtení main.css **/
-      wp_enqueue_style('main', get_template_directory_uri() . '/assets/css/main.css', array('nunito-font', 'bootstrap-css'), '1.0', 'all');
-
-
-
+      /* načtení bootstrap css */
+      wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/scss/custom.css', array('nunito-font'), '1.0.0', 'all');
 
       /* načtení bootstrap js */
-      wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array('jquery'), '5.3.8', true);
+      wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), '5.3.8', true);
   }
 
 add_action('wp_enqueue_scripts', 'tabor_sopka_enqueue_assets');

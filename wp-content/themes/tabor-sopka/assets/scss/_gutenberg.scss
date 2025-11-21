@@ -1,0 +1,161 @@
+/* * _gutenberg.scss
+ * Moderní mapování WordPress bloků na Bootstrap 5.3
+ */
+
+// ---------------------------------------------------------
+// 1. ZÁKLADNÍ TEXT A TYPOGRAFIE
+// ---------------------------------------------------------
+
+// Citace (Blockquote) - Převzato z Understrapu, ale zjednodušeno
+.wp-block-quote {
+    @extend .figure; // Použije Bootstrap styl pro figury
+    margin: 1.5rem 0;
+    border-left: 4px solid $primary; // Použije tvou žlutou
+    padding-left: 1rem;
+
+    p {
+        @extend .figure-caption;
+        font-size: 1.1rem;
+        font-style: italic;
+        color: $body-color;
+    }
+
+    cite {
+        display: block;
+        font-weight: bold;
+        margin-top: 0.5rem;
+        font-style: normal;
+        font-size: 0.875rem;
+    }
+}
+
+// ---------------------------------------------------------
+// 2. OBRÁZKY (IMAGES)
+// ---------------------------------------------------------
+
+// Klasický obrázek v obsahu
+figure.wp-block-image, 
+.wp-block-image > figure {
+    display: block;
+    margin-bottom: 1.5rem;
+
+    // Samotný obrázek
+    img {
+        @extend .img-fluid; // Klíčové: zajistí responzivitu (max-width: 100%)
+        @extend .rounded;   // Jemně zaoblené rohy
+        height: auto;
+    }
+
+    // Popisek pod obrázkem
+    figcaption {
+        @extend .figure-caption;
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+}
+
+// ---------------------------------------------------------
+// 3. TABULKY (TABLES)
+// ---------------------------------------------------------
+
+.wp-block-table {
+    margin-bottom: 1.5rem;
+    overflow-x: auto; // Umožní scrollování tabulky na mobilu
+
+    table {
+        @extend .table;           // Základní Bootstrap tabulka
+        @extend .table-striped;   // Pruhované řádky (lepší čitelnost)
+        @extend .table-hover;     // Efekt při najetí myší
+        @extend .table-bordered;  // Ohraničení
+        
+        // Oprava pro WP editor: odstraníme margin uvnitř
+        margin-bottom: 0;
+    }
+}
+
+// ---------------------------------------------------------
+// 4. TLAČÍTKA (BUTTONS) - Moderní BS5 přístup
+// ---------------------------------------------------------
+
+.wp-block-button {
+    margin-bottom: 1rem;
+
+    &__link {
+        // Zde je to kouzlo: mapujeme WP odkaz na Bootstrap tlačítko
+        @extend .btn;
+        @extend .btn-primary; // Defaultně žluté
+        
+        text-decoration: none; // Zrušíme podtržení odkazu
+        
+        // Pokud chceš, aby se tlačítka nelámala na více řádků
+        white-space: nowrap; 
+    }
+
+    // Podpora pro "Outline" styl (pokud ho vybereš v editoru)
+    &.is-style-outline .wp-block-button__link {
+        @extend .btn-outline-primary;
+        background-color: transparent !important;
+        color: $body-color;
+    }
+}
+
+// Centrování tlačítek (Gutenberg to dělá přes wrapper)
+.wp-block-buttons.is-content-justification-center {
+    justify-content: center;
+}
+
+// ---------------------------------------------------------
+// 5. FORMULÁŘE (VYHLEDÁVÁNÍ)
+// ---------------------------------------------------------
+
+.wp-block-search {
+    // Uděláme z toho Bootstrap Input Group (pole + tlačítko vedle sebe)
+    @extend .input-group;
+    margin-bottom: 1.5rem;
+
+    &__label {
+        @extend .form-label;
+        width: 100%; // Label dáme na vlastní řádek nad pole
+        font-weight: bold;
+    }
+
+    &__input {
+        @extend .form-control; // Input field design
+        border-radius: $border-radius; // Použije tvé zaoblení
+    }
+
+    &__button {
+        @extend .btn;
+        @extend .btn-primary;
+        margin-left: 0.5rem; // Malá mezera
+    }
+}
+
+// ---------------------------------------------------------
+// 6. ODDĚLOVAČ (HR)
+// ---------------------------------------------------------
+
+hr.wp-block-separator {
+    border: 0;
+    border-top: 2px solid $gray-300; // Tvá šedá
+    opacity: 1; // Bootstrap 5 má opacity defaultně nižší
+    margin: 2rem auto;
+    max-width: 100%;
+    
+    // Styl "Dots" (tečky) v Gutenbergu
+    &.is-style-dots {
+        background: none;
+        border: none;
+        text-align: center;
+        height: auto;
+        
+        &::before {
+            content: "···";
+            color: $secondary; // Tvá hnědá
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 0.5em;
+            padding-left: 0.5em;
+        }
+    }
+}
