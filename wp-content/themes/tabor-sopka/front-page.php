@@ -1,5 +1,5 @@
-<?php get_header(); ?>
+<?php get_header();
 
-<p>Landing page<p>
+the_title();
 
-<?php get_footer(); ?>
+get_footer(); ?>
