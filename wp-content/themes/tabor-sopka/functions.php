@@ -13,6 +13,7 @@ function tabor_sopka_enqueue_assets(){
 
       /* načtení bootstrap js */
       wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), '5.3.8', true);
+
   }
 
 add_action('wp_enqueue_scripts', 'tabor_sopka_enqueue_assets');
@@ -43,5 +44,9 @@ function tabor_sopka_widgets_init(){
 }
 add_action('widgets_init', 'tabor_sopka_widgets_init');
 
-
+/* načtení editor.js */
+function tabor_sopka_gutenberg_scripts(){
+    wp_enqueue_script('editor-js', get_template_directory_uri() . '/assets/js/editor.js', array('wp-blocks', 'wp-dom-ready', 'wp-edit-post'), filemtime( get_template_directory() . '/assets/js/editor.js'), true);
+}
+add_action('enqueue_block_editor_assets', 'tabor_sopka_gutenberg_scripts');
 ?>

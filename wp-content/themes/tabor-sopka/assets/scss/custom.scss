@@ -4,11 +4,13 @@ $primary:       #fcae00;
 $secondary:     #a36f38;
 $terciary:      #ffe066;
 $black:         #040404;
+$light:       #CDCDCD;
+$hover:         #FFE066;
 
 /*barvy background*/
 $sopka-primary-bg:       $primary;
-$sopka-secondary-bg:   #fff5ca;
-$sopka-terciary-bg:    #fffae6;
+$sopka-secondary-bg:   #fffae6;
+$sopka-terciary-bg:    #fff5ca;
 
 /*barvy textu*/
 $sopka-primary-text:     $black;
@@ -20,6 +22,11 @@ $sopka-neutral-primary:    #5A5A5A;
 $sopka-neutral-secondary:  #757575;
 $sopka-neutral-terciary:   #b3b3b3;
 
+/*barvy border*/
+
+$sopka-border-primary: $black;
+$sopka-border-secondary: #767676;
+$sopka-border-terciary: #D9D9D9;
 
 /*font*/
 $font-family-sans-serif:  'Nunito', sans-serif;
@@ -30,6 +37,9 @@ $font-site-base: 1rem;
 $h1-font-size: 3rem;
 $h2-font-size: 2rem;
 $h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1rem;
+$h6-font-size: 0.875rem;
 $small-font-size: 0.875rem;
 
 /*tloušťky písma*/
@@ -38,6 +48,22 @@ $font-weight-bold: 700;
 
 /*barva písma*/
 $body-color: $black;
+
+/*akordeon*/
+$accordion-bg: $sopka-secondary-bg;
+$accordion-button-active-bg: $sopka-secondary-bg;
+
+$accordion-color: $sopka-primary-text;
+$accordion-button-active-color: $sopka-secondary-text;
+
+$accordion-icon-color: $black;
+$accordion-icon-active-color: $black;
+
+$accordion-border-color: $sopka-border-terciary;
+$accordion-border-radius: 0.5rem;
+
+$accordion-button-focus-box-shadow: none;
+$accordion-button-focus-border-color: transparent;
 
 
 
@@ -98,5 +124,126 @@ h2{
 h3{
     color: $sopka-secondary-text;
     font-weight: $font-weight-bold;
+}
+
+h4{
+    color: $sopka-primary-text;
+    font-weight: $font-weight-normal;
+}
+
+h5{
+    color: $sopka-primary-text;
+    font-weight: $font-weight-normal;
+}
+
+h6{
+    color: $sopka-primary-text;
+    font-weight: $font-weight-normal;
+}
+
+.accordion-button{
+    font-size: $h4-font-size;
+}
+
+.btn{
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border-width: 0.15rem;
+    transition: all 0.1s ease-in-out;
+    color: $sopka-primary-text;
+}
+
+.btn-primary{
+    background-color: $primary;
+    border-color: $sopka-border-primary;
+    color: $sopka-primary-text;
+    font-weight: $font-weight-bold;
+
+    &:hover{
+        background-color: $hover;
+        border-color: $sopka-border-primary;
+    }
+}
+
+.btn-secondary{
+    background-color: $primary;
+    border-color: $sopka-border-primary;
+    color: $sopka-primary-text;
+    font-weight: $font-weight-normal;
+
+    &:hover{
+        background-color: $hover;
+        border-color: $sopka-border-primary;
+    }
+}
+
+.btn-light{
+    background-color: $light;
+    border-color: $sopka-border-secondary;
+    font-weight: $font-weight-normal;
+
+    &:hover{
+        background-color: $sopka-neutral-terciary;
+    }
+}
+
+
+.content{
+    display:flex;
+    flex-direction: column;
+    gap: 0 !important;
+    width: 100%;
+}
+.container{
+    margin:0;
+}
+
+.areoi-element.container{
+    width: 100%;
+}
+
+.content > .wp-block-group{
+    width: 100%;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 3rem;
+
+    &:nth-child(odd){
+        background-color: $sopka-secondary-bg;
+    }
+    &:nth-child(even){
+        background-color: $sopka-terciary-bg;
+    }
+
+    .wp-block-group__inner-container{
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .container, .areoi-element.container{
+        margin-left: auto;
+        margin-right: auto;
+
+        width: 100%;
+        max-width: 1320px;
+        text-align: left;
+    }
+
+    .row{
+        align-items: center;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.content > .wp-block-group:first-child{
+    text-align: center;
+
+    .container, .areoi-element-container{
+        text-align: center;
+    }
 }
 

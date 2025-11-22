@@ -74,24 +74,45 @@ figure.wp-block-image,
 }
 
 // ---------------------------------------------------------
-// 4. TLAČÍTKA (BUTTONS) - Moderní BS5 přístup
+// 4. TLAČÍTKA (BUTTONS)
 // ---------------------------------------------------------
 
 .wp-block-button {
     margin-bottom: 1rem;
 
     &__link {
-        // Zde je to kouzlo: mapujeme WP odkaz na Bootstrap tlačítko
+        // Základní tvar tlačítka (padding, radius, font)
         @extend .btn;
-        @extend .btn-primary; // Defaultně žluté
         
-        text-decoration: none; // Zrušíme podtržení odkazu
+        // Defaultní barva (pokud není vybrán styl, bude žlutá)
+        @extend .btn-primary; 
         
-        // Pokud chceš, aby se tlačítka nelámala na více řádků
-        white-space: nowrap; 
+        text-decoration: none;
+        white-space: nowrap;
     }
 
-    // Podpora pro "Outline" styl (pokud ho vybereš v editoru)
+    // --- PROPOJENÍ VARIANT (BLOCK STYLES) ---
+
+    // 1. Primární styl (Žlutý)
+    // Třída: .is-style-sopka-primary (generováno z tvého JS)
+    &.is-style-sopka-primary-btn .wp-block-button__link {
+        @extend .btn-primary;
+    }
+
+    // 2. Sekundární styl (Hnědý)
+    // Třída: .is-style-sopka-secondary
+    &.is-style-sopka-secondary-btn .wp-block-button__link {
+        @extend .btn-secondary;
+    }
+
+    // 3. Neutrální styl (Šedý)
+    // Třída: .is-style-sopka-light
+    &.is-style-sopka-light-btn .wp-block-button__link {
+        @extend .btn-light;
+    }
+
+    // --- VARIANTY OUTLINE (OBRYS) ---
+    // Pokud bys někdy potřeboval obrysová tlačítka
     &.is-style-outline .wp-block-button__link {
         @extend .btn-outline-primary;
         background-color: transparent !important;
@@ -99,7 +120,7 @@ figure.wp-block-image,
     }
 }
 
-// Centrování tlačítek (Gutenberg to dělá přes wrapper)
+// Centrování tlačítek
 .wp-block-buttons.is-content-justification-center {
     justify-content: center;
 }
