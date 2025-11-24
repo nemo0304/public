@@ -10474,19 +10474,20 @@ h6, .h6 {
   background-color: #b3b3b3;
 }
 
+.bg-hover {
+  background-color: #FFE066;
+}
+
+.bg-copyright {
+  background-color: #fffae6;
+}
+
 .content {
   display: flex;
   flex-direction: column;
   gap: 0 !important;
   width: 100%;
-}
-
-.container {
-  margin: 0;
-}
-
-.areoi-element.container {
-  width: 100%;
+  overflow-x: hidden;
 }
 
 .content > .wp-block-group {

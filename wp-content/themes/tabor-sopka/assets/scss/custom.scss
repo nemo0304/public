@@ -11,6 +11,7 @@ $hover:         #FFE066;
 $sopka-primary-bg:       $primary;
 $sopka-secondary-bg:   #fffae6;
 $sopka-terciary-bg:    #fff5ca;
+$sopka-hover-bg:       $hover;
 
 /*barvy textu*/
 $sopka-primary-text:     $black;
@@ -187,19 +188,21 @@ h6{
     }
 }
 
+.bg-hover{
+    background-color: $hover;
+}
+
+.bg-copyright{
+    background-color: $sopka-secondary-bg;
+}
+
 
 .content{
     display:flex;
     flex-direction: column;
     gap: 0 !important;
     width: 100%;
-}
-.container{
-    margin:0;
-}
-
-.areoi-element.container{
-    width: 100%;
+    overflow-x: hidden;
 }
 
 .content > .wp-block-group{
