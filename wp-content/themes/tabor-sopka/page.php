@@ -6,7 +6,7 @@
         while ( have_posts() ) :
             the_post();
             
-            the_title(); ?>
+             ?>
 
             <div class="content"><?php the_content();?></div>
             <?php
