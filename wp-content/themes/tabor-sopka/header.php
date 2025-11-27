@@ -15,7 +15,8 @@
             <div class="container-fluid position-relative">
 
                 <button class="navbar-toggler border-0 z-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="bi bi-list"></i>
+                    <i class="bi bi-x-lg"></i>
                 </button>
 
                 <a class="navbar-brand d-flex align-items-center gap-3 mx-auto ms-lg-0 me-lg-auto z-1" href="<?php echo esc_url( home_url( '/' ) );?>">
@@ -26,7 +27,7 @@
                     </span>
                 </a>
 
-                <a class="d-lg-none position-absolute end-0 top-50 translate-middle-y me-3 z-2" href="<?php echo esc_url( home_url( '/' ) );?>">
+                <a class="header-mobile-logo d-lg-none ms-auto z-2" href="<?php echo esc_url( home_url( '/' ) );?>">
                     <img src="<?php echo get_template_directory_uri();?>/assets/images/logo_sopka.png" alt="Logo Sopka" width="50" height="auto">
                 </a>
 

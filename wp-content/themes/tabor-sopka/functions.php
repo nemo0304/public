@@ -12,6 +12,8 @@ function tabor_sopka_enqueue_assets(){
       // načtení bootstrap js
       wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array(), '5.3.8', true);
 
+      //načtení bootstrap icons
+      wp_enqueue_style('bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css', array(),'1.11.3');
   }
 
 add_action('wp_enqueue_scripts', 'tabor_sopka_enqueue_assets');

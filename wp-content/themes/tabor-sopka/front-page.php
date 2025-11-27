@@ -1,5 +1,5 @@
-<?php get_header();
+<?php get_header();?>
 
-the_title();
-
+<p> zde bude obsah stránky<p>
+<?php
 get_footer(); ?>
