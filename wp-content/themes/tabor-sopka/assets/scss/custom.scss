@@ -1,11 +1,12 @@
 
 /*základní barvy*/
-$primary:       #fcae00;
+$primary:       #FCAE00;
 $secondary:     #a36f38;
 $terciary:      #ffe066;
 $black:         #040404;
 $light:       #CDCDCD;
 $hover:         #FFE066;
+
 
 /*barvy background*/
 $sopka-primary-bg:       $primary;
@@ -149,11 +150,14 @@ html,body{
     font-size: $h4-font-size;
 }
 
+.accordion-item{
+    margin-bottom: 1rem;
+}
 
 
-// tlačítka
+// upravení tlačítek
 .btn{
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 0.5rem;
     border-width: 0.15rem;
     transition: all 0.1s ease-in-out;
@@ -161,39 +165,50 @@ html,body{
 }
 
 .btn-primary{
-    background-color: $primary;
-    border-color: $sopka-border-primary;
-    color: $sopka-primary-text;
     font-weight: $font-weight-bold;
+    border-color: $sopka-border-primary;
 
-    &:hover{
-        background-color: $hover;
-        border-color: $sopka-border-primary;
+    &:hover,&:active {
+        background-color: $hover !important;
+        border-color: $sopka-border-primary !important;
     }
 }
 
 .btn-secondary{
-    background-color: $primary;
+    @include button-variant($primary, $primary, $black);
     border-color: $sopka-border-primary;
-    color: $sopka-primary-text;
     font-weight: $font-weight-normal;
 
-    &:hover{
-        background-color: $hover;
-        border-color: $sopka-border-primary;
+    &:hover,&:active{
+        background-color: $hover !important;
+        border-color: $sopka-border-primary !important;
     }
 }
 
 .btn-light{
-    background-color: $light;
     border-color: $sopka-border-secondary;
-    font-weight: $font-weight-normal;
 
-    &:hover{
-        background-color: $sopka-neutral-terciary;
+    &:hover,&:active {
+        background-color: $sopka-neutral-terciary !important;
+        border-color: $sopka-border-secondary !important;
     }
 }
 
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+
+    > .btn{
+        width: 100%;
+        @include media-breakpoint-up(md){
+            flex: 1 0 0%;
+            width: auto;
+        }
+    }
+}
+
+//nastavení pozadí pro footer
 .bg-hover{
     background-color: $hover;
 }
@@ -256,21 +271,31 @@ html,body{
     }
 }
 
-.content .row .wp-block-image{
-    margin: 0;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
+// vypnutí zaoblení obrázků
+figure.wp-block-image img,.wp-block-image img {
+    border-radius: 0 !important;
 }
+//vypnutí marginu pro spodek block-image
+.wp-block-image{
+    margin: 0 !important;
+}
+
+// zarovnání doleva pro obrázky hlavně
+.col:nth-child(odd){
+    padding-left: 0 !important;
+}
+.col:nth-child(even){
+    padding-right: 0 !important;
+}
+//přerovnání paddingu a margin-bottom pro mobil
 @include media-breakpoint-down(md){
-    .content .row > [class*="col-"]{
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin-bottom: 1.5rem;
+    .wp-block-image{
+        margin-bottom: 1.5rem !important;
     }
-    .content .row > [class*="col-"]:last-child{
-        margin-bottom: 0;
+    .col{
+        padding: 0;
     }
-}
+};
 
 
 
