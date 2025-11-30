@@ -14,3 +14,12 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
+
+<IfModule mod_rewrite.c>
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header set Permissions-Policy "geolocation=(), microphone=(), midi(), sync-xhr=(), camera=(), gyroscope=(), magnetometer=(), fullscreen=(self), payment=()"
+</IfModule>

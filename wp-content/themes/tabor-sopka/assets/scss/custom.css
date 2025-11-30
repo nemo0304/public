@@ -10432,7 +10432,20 @@ h6, .h6 {
 }
 
 html, body {
+  height: 100%;
   overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.obsah-stranky {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .accordion-button {
@@ -10515,6 +10528,7 @@ html, body {
 }
 
 .content {
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   gap: 0 !important;
@@ -10561,6 +10575,10 @@ html, body {
   text-align: center;
 }
 
+.content > .wp-block-group:last-child {
+  flex: 1 0 auto;
+}
+
 figure.wp-block-image img, .wp-block-image img {
   border-radius: 0 !important;
 }
@@ -10585,6 +10603,41 @@ figure.wp-block-image img, .wp-block-image img {
     padding: 0;
   }
 }
+.hero-obrazek {
+  flex: 0 0 400px;
+  width: 100%;
+  background-image: var(--hero-img);
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  z-index: 1;
+}
+
+.wp-block-media-text img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-media-text .wp-block-media-text__content {
+  padding: 0 !important;
+  padding-left: 1rem !important;
+}
+
+@media (max-width: 1399.98px) {
+  .wp-block-media-text.is-stacked-on-mobile {
+    grid-template-columns: 0.5fr !important;
+    grid-template-rows: auto auto;
+  }
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+    margin-bottom: 1.5rem;
+  }
+}
+.content > .wp-block-group:nth-child(odd) .accordion-button, .wp-block-group:nth-child(odd) .accordion-item {
+  background-color: #fff5ca;
+}
+
 .header .navbar {
   padding: 0;
   min-height: 96px;
@@ -10631,13 +10684,14 @@ figure.wp-block-image img, .wp-block-image img {
   text-align: center;
   padding: 0 0.5rem;
 }
-.header .nav-link:hover, .header .nav-link:focus, .header .nav-link.show {
+.header .nav-link:hover, .header .nav-link.show {
   background-color: #FFE066;
 }
 @media all and (min-width: 992px) {
   .header .dropdown-menu {
     background-color: #fffae6;
-    border: none;
+    border: 1px solid #5A5A5A;
+    border-top: none;
     padding: 0;
     margin: 0;
     position: absolute;
@@ -10659,11 +10713,8 @@ figure.wp-block-image img, .wp-block-image img {
   .header .dropdown-menu .dropdown-item:hover {
     background-color: #FFE066;
   }
-  .header .nav-item.dropdown:hover .dropdown-menu {
+  .header .dropdown-menu.show {
     display: block;
-  }
-  .header .nav-item.dropdown:hover .nav-link {
-    background-color: #FFE066;
   }
 }
 .header .nav-item.nav-btn-cta .nav-link {

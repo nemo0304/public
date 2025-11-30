@@ -143,9 +143,25 @@ h6{
     font-weight: $font-weight-normal;
 }
 
+// nastavení contentu stránky
 html,body{
+    height: 100%;
     overflow-x: hidden;
 }
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.obsah-stranky{
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+//úprava akordeonu
 .accordion-button{
     font-size: $h4-font-size;
 }
@@ -219,6 +235,8 @@ html,body{
 
 // stylování blocků pro obsah
 .content{
+    flex: 1 0 auto;
+
     display:flex;
     flex-direction: column;
     gap: 0 !important;
@@ -271,6 +289,10 @@ html,body{
     }
 }
 
+.content > .wp-block-group:last-child {
+  flex: 1 0 auto;
+}
+
 // vypnutí zaoblení obrázků
 figure.wp-block-image img,.wp-block-image img {
     border-radius: 0 !important;
@@ -297,7 +319,48 @@ figure.wp-block-image img,.wp-block-image img {
     }
 };
 
+// hero obrázek
+.hero-obrazek{
+    flex: 0 0 400px;
+    width: 100%;
+    background-image: var(--hero-img);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
 
+//stylizace bloku Media with content - avantary
+.wp-block-media-text{
+    img{
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .wp-block-media-text__content {
+        padding: 0 !important;
+        padding-left: 1rem !important;
+    }
+}
+// přepsání nastavení media with content nastavení - kvůli kolizi obrázek/content
+@include media-breakpoint-down(xxl) {
+    .wp-block-media-text.is-stacked-on-mobile {
+        grid-template-columns: 0.5fr !important;
+        grid-template-rows: auto auto;
+    }
+
+    .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+        margin-bottom: 1.5rem;
+    }
+
+}
+
+
+// barvy accordeonů
+.content > .wp-block-group:nth-child(odd) .accordion-button, .wp-block-group:nth-child(odd) .accordion-item {
+    background-color: $sopka-terciary-bg;
+}
 
 // stylizace headeru
 
@@ -357,7 +420,7 @@ figure.wp-block-image img,.wp-block-image img {
         text-align: center;
         padding: 0 0.5rem;
 
-        &:hover, &:focus, &.show{
+        &:hover, &.show{
             background-color: $hover;
         }
     }
@@ -365,7 +428,8 @@ figure.wp-block-image img,.wp-block-image img {
     @media all and (min-width: 992px){
         .dropdown-menu{
         background-color: $sopka-secondary-bg;
-        border:none;
+        border: 1px solid $sopka-neutral-primary;
+        border-top: none;
         padding:0;
         margin:0;        
 
@@ -389,12 +453,10 @@ figure.wp-block-image img,.wp-block-image img {
             }
         }
     }
-        .nav-item.dropdown:hover .dropdown-menu{
-            display: block;
-        }
-        .nav-item.dropdown:hover .nav-link{
-            background-color: $hover;
-        }
+    .dropdown-menu.show{
+        display:block;
+    }
+        
     }
 
     .nav-item.nav-btn-cta{

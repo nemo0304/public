@@ -1,5 +1,12 @@
 <?php
 
+//nastavení šablony
+function tabor_sopka_setup_theme(){
+     // náhledové obrázky
+     add_theme_support( 'post-thumbnails' );
+}
+add_action('after_setup_theme', 'tabor_sopka_setup_theme');
+
 // načítání stylů šablony
 function tabor_sopka_enqueue_assets(){
 
@@ -17,6 +24,7 @@ function tabor_sopka_enqueue_assets(){
   }
 
 add_action('wp_enqueue_scripts', 'tabor_sopka_enqueue_assets');
+
 
 // inicializace Menus ve Wordpressu
 function tabor_sopka_register_nav_menu(){

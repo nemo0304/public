@@ -1,5 +1,5 @@
 
-        <footer class="footer mt-auto w-100">
+        <footer class="footer w-100">
             <div class="row g-0">
                 <div class="col-12 col-lg-6 bg-hover p-3 p-lg-5">
                     <div class="mapa-container mx-auto" style="max-width: 480px;">
