@@ -356,6 +356,18 @@ figure.wp-block-image img,.wp-block-image img {
 
 }
 
+// přepsání stylizace tabulky
+.wp-block-table{
+    background-color: transparent !important;
+    th, td, tr{
+        background-color: transparent !important;
+        border-style: none !important;
+    }
+}
+.table{
+    --bs-table-striped-bg: transparent !important;
+    --bs-table-hover-bg: none !important;
+}
 
 // barvy accordeonů
 .content > .wp-block-group:nth-child(odd) .accordion-button, .wp-block-group:nth-child(odd) .accordion-item {

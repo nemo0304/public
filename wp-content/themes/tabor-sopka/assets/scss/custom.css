@@ -10634,6 +10634,19 @@ figure.wp-block-image img, .wp-block-image img {
     margin-bottom: 1.5rem;
   }
 }
+.wp-block-table {
+  background-color: transparent !important;
+}
+.wp-block-table th, .wp-block-table td, .wp-block-table tr {
+  background-color: transparent !important;
+  border-style: none !important;
+}
+
+.table, .wp-block-table table {
+  --bs-table-striped-bg: transparent !important;
+  --bs-table-hover-bg: none !important;
+}
+
 .content > .wp-block-group:nth-child(odd) .accordion-button, .wp-block-group:nth-child(odd) .accordion-item {
   background-color: #fff5ca;
 }
