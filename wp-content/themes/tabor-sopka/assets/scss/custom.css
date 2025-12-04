@@ -2290,7 +2290,7 @@ progress {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: var(--bs-body-bg);
+  background-color: #f5f5f5;
   background-clip: padding-box;
   border: var(--bs-border-width) solid var(--bs-border-color);
   border-radius: var(--bs-border-radius);
@@ -2309,7 +2309,7 @@ progress {
 }
 .form-control:focus, .wp-block-search__input:focus {
   color: var(--bs-body-color);
-  background-color: var(--bs-body-bg);
+  background-color: #f5f5f5;
   border-color: rgb(253.5, 214.5, 127.5);
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(252, 174, 0, 0.25);
@@ -2446,7 +2446,7 @@ textarea.form-control-lg {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: var(--bs-body-bg);
+  background-color: #f5f5f5;
   background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
@@ -2520,7 +2520,7 @@ textarea.form-control-lg {
 }
 
 .form-check-input {
-  --bs-form-check-bg: var(--bs-body-bg);
+  --bs-form-check-bg: #f5f5f5;
   flex-shrink: 0;
   width: 1em;
   height: 1em;
@@ -2803,7 +2803,7 @@ textarea.form-control-lg {
   z-index: -1;
   height: 1.5em;
   content: "";
-  background-color: var(--bs-body-bg);
+  background-color: #f5f5f5;
   border-radius: var(--bs-border-radius);
 }
 .form-floating > textarea:focus ~ label::after,
@@ -2813,7 +2813,7 @@ textarea.form-control-lg {
   z-index: -1;
   height: 1.5em;
   content: "";
-  background-color: var(--bs-body-bg);
+  background-color: #f5f5f5;
   border-radius: var(--bs-border-radius);
 }
 .form-floating > textarea:disabled ~ label::after {
@@ -10867,27 +10867,6 @@ figure.wp-block-image img, .wp-block-image img {
   }
 }
 
-.prihlaska-zavreno {
-  width: 100%;
-  margin: 0 auto;
-  background-color: #d9c5a1;
-  border-radius: 0.75rem;
-  border: 1px solid #040404;
-  box-shadow: 0 4px 7px #040404;
-  padding: 3rem 3rem;
-}
-.prihlaska-zavreno h1, .prihlaska-zavreno .h1 {
-  margin-bottom: 3rem;
-}
-@media (max-width: 767.98px) {
-  .prihlaska-zavreno {
-    padding: 2rem 1.5rem;
-  }
-  .prihlaska-zavreno h1, .prihlaska-zavreno .h1 {
-    margin-bottom: 2rem;
-  }
-}
-
 .page-template-page-prihlaska .obsah-stranky {
   background-color: #fffae6;
   justify-content: center;
@@ -10897,4 +10876,52 @@ figure.wp-block-image img, .wp-block-image img {
 }
 .page-template-page-prihlaska .wp-block-group {
   background-color: transparent;
+}
+
+.prihlaska-otevreno, .prihlaska-zavreno {
+  max-width: 1320px;
+  margin: 4rem auto;
+  background-color: #d9c5a1;
+  border-radius: 0.75rem;
+  border: 1px solid #040404;
+  box-shadow: 0 4px 7px #040404;
+  padding: 3rem 3rem;
+}
+.prihlaska-otevreno h1, .prihlaska-zavreno h1, .prihlaska-otevreno .h1, .prihlaska-zavreno .h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.prihlaska-otevreno h2, .prihlaska-zavreno h2, .prihlaska-otevreno .h2, .prihlaska-zavreno .h2 {
+  color: #040404;
+}
+@media (max-width: 1399.98px) {
+  .prihlaska-otevreno, .prihlaska-zavreno {
+    margin: 4rem 4rem;
+  }
+  .prihlaska-otevreno h1, .prihlaska-zavreno h1, .prihlaska-otevreno .h1, .prihlaska-zavreno .h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+.prihlaska-otevreno .prihlaska-header {
+  text-align: center;
+}
+.prihlaska-otevreno .prihlaska-sekce {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 3px solid #767676;
+}
+
+.form-label--required::after {
+  content: "*";
+  color: red;
+  margin-left: 0.15rem;
+  margin-right: 0.15rem;
+  font-weight: 700;
+}
+
+.modal-content {
+  background-color: #fffae6;
+  margin: auto auto;
+  padding: 0 0.5rem;
 }/*# sourceMappingURL=custom.css.map */

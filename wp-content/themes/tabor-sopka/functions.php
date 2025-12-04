@@ -58,4 +58,12 @@ add_action('after_setup_theme', 'tabor_sopka_gutenberg');
 
 // registrace bootstrap-5-navwalker.php
 require_once get_template_directory() . '/bootstrap-5-navwalker.php';
+
+//načtení prihlaska.js
+function ts_enqueue_prihlaska_js(){
+    if(is_page_template('page-prihlaska.php')){
+        wp_enqueue_script('prihlaska-js', get_template_directory_uri() . '/assets/js/prihlaska.js', ['bootstrap-js'], null, true);
+    }
+}
+add_action('wp_enqueue_scripts', 'ts_enqueue_prihlaska_js');
 ?>

@@ -6,7 +6,6 @@ $terciary:      #ffe066;
 $black:         #040404;
 $light:       #CDCDCD;
 $hover:         #FFE066;
-$prihlaska-bg:   #d9c5a1;
 
 
 /*barvy background*/
@@ -14,6 +13,8 @@ $sopka-primary-bg:       $primary;
 $sopka-secondary-bg:   #fffae6;
 $sopka-terciary-bg:    #fff5ca;
 $sopka-hover-bg:       $hover;
+$prihlaska-bg:   #d9c5a1;
+$input-bg:       #f5f5f5;
 
 /*barvy textu*/
 $sopka-primary-text:     $black;
@@ -635,29 +636,7 @@ figure.wp-block-image img,.wp-block-image img {
 }
 
 
-// stylování přihlášky - stav zavřeno
-.prihlaska-zavreno{
-    width: 100%;
-    margin: 0 auto;
-
-    background-color: $prihlaska-bg;
-    border-radius: 0.75rem;
-    border: 1px solid $sopka-border-primary;
-    box-shadow: 0 4px 7px $black;
-
-    padding: 3rem 3rem;
-
-    h1{
-        margin-bottom: 3rem;
-    }
-
-    @include media-breakpoint-down(md){
-        padding: 2rem 1.5rem;
-        h1{
-            margin-bottom: 2rem;
-        }
-    }
-}
+// stylování přihlášky - pozadí stránky
 .page-template-page-prihlaska{
     .obsah-stranky{
         background-color: $sopka-secondary-bg;
@@ -671,4 +650,65 @@ figure.wp-block-image img,.wp-block-image img {
     .wp-block-group{
         background-color: transparent;
     }
+}
+// stylování boxu s přihláškou/informací o uzavření přihlášek
+%prihlaska-box{
+    max-width: 1320px;
+    margin: 4rem auto;
+
+
+    h1{
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    h2{
+        color: $black;
+    }
+
+    background-color: $prihlaska-bg;
+    border-radius: 0.75rem;
+    border: 1px solid $sopka-border-primary;
+    box-shadow: 0 4px 7px $black;
+    padding: 3rem 3rem;
+
+    @include media-breakpoint-down(xxl){
+        margin: 4rem 4rem;
+        h1{
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.prihlaska-zavreno{
+    @extend %prihlaska-box;
+}
+
+.prihlaska-otevreno{
+    @extend %prihlaska-box;
+
+    .prihlaska-header{
+        text-align: center;
+
+    }
+
+    .prihlaska-sekce{
+        margin-top:2rem;
+        padding-top:2rem;
+        border-top: 3px solid $sopka-border-secondary;
+    }
+}
+
+
+.form-label--required::after{
+    content: "*";
+    color: red;
+    margin-left: 0.15rem;
+    margin-right: 0.15rem;
+    font-weight: $font-weight-bold;
+}
+//modal okno
+.modal-content{
+    background-color: $sopka-secondary-bg;
+    margin: auto auto;
+    padding: 0 0.5rem;
 }
