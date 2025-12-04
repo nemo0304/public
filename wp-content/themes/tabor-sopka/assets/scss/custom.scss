@@ -6,6 +6,7 @@ $terciary:      #ffe066;
 $black:         #040404;
 $light:       #CDCDCD;
 $hover:         #FFE066;
+$prihlaska-bg:   #d9c5a1;
 
 
 /*barvy background*/
@@ -170,6 +171,11 @@ body{
     margin-bottom: 1rem;
 }
 
+// barvy accordeonů
+.content > .wp-block-group:nth-child(odd) .accordion-button, .wp-block-group:nth-child(odd) .accordion-item {
+    background-color: $sopka-terciary-bg;
+}
+
 
 // upravení tlačítek
 .btn{
@@ -228,7 +234,7 @@ body{
 .bg-hover{
     background-color: $hover;
 }
-
+//pozadí pro copyright banner
 .bg-copyright{
     background-color: $sopka-secondary-bg;
 }
@@ -367,11 +373,6 @@ figure.wp-block-image img,.wp-block-image img {
 .table{
     --bs-table-striped-bg: transparent !important;
     --bs-table-hover-bg: none !important;
-}
-
-// barvy accordeonů
-.content > .wp-block-group:nth-child(odd) .accordion-button, .wp-block-group:nth-child(odd) .accordion-item {
-    background-color: $sopka-terciary-bg;
 }
 
 // stylizace headeru
@@ -633,3 +634,41 @@ figure.wp-block-image img,.wp-block-image img {
     }
 }
 
+
+// stylování přihlášky - stav zavřeno
+.prihlaska-zavreno{
+    width: 100%;
+    margin: 0 auto;
+
+    background-color: $prihlaska-bg;
+    border-radius: 0.75rem;
+    border: 1px solid $sopka-border-primary;
+    box-shadow: 0 4px 7px $black;
+
+    padding: 3rem 3rem;
+
+    h1{
+        margin-bottom: 3rem;
+    }
+
+    @include media-breakpoint-down(md){
+        padding: 2rem 1.5rem;
+        h1{
+            margin-bottom: 2rem;
+        }
+    }
+}
+.page-template-page-prihlaska{
+    .obsah-stranky{
+        background-color: $sopka-secondary-bg;
+        justify-content: center;
+    }
+
+    .content{
+        flex: 0 0 auto;
+    }
+
+    .wp-block-group{
+        background-color: transparent;
+    }
+}

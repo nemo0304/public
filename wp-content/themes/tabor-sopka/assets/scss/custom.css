@@ -10456,6 +10456,10 @@ body {
   margin-bottom: 1rem;
 }
 
+.content > .wp-block-group:nth-child(odd) .accordion-button, .wp-block-group:nth-child(odd) .accordion-item {
+  background-color: #fff5ca;
+}
+
 .btn, .wp-block-button__link, .wp-block-search__button {
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
@@ -10645,10 +10649,6 @@ figure.wp-block-image img, .wp-block-image img {
 .table, .wp-block-table table {
   --bs-table-striped-bg: transparent !important;
   --bs-table-hover-bg: none !important;
-}
-
-.content > .wp-block-group:nth-child(odd) .accordion-button, .wp-block-group:nth-child(odd) .accordion-item {
-  background-color: #fff5ca;
 }
 
 .header .navbar {
@@ -10865,4 +10865,36 @@ figure.wp-block-image img, .wp-block-image img {
   .header .navbar-toggler .bi-x-lg {
     font-size: 2rem;
   }
+}
+
+.prihlaska-zavreno {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #d9c5a1;
+  border-radius: 0.75rem;
+  border: 1px solid #040404;
+  box-shadow: 0 4px 7px #040404;
+  padding: 3rem 3rem;
+}
+.prihlaska-zavreno h1, .prihlaska-zavreno .h1 {
+  margin-bottom: 3rem;
+}
+@media (max-width: 767.98px) {
+  .prihlaska-zavreno {
+    padding: 2rem 1.5rem;
+  }
+  .prihlaska-zavreno h1, .prihlaska-zavreno .h1 {
+    margin-bottom: 2rem;
+  }
+}
+
+.page-template-page-prihlaska .obsah-stranky {
+  background-color: #fffae6;
+  justify-content: center;
+}
+.page-template-page-prihlaska .content {
+  flex: 0 0 auto;
+}
+.page-template-page-prihlaska .wp-block-group {
+  background-color: transparent;
 }/*# sourceMappingURL=custom.css.map */

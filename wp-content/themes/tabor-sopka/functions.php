@@ -1,5 +1,8 @@
 <?php
 
+//načtení sekce nastevení přihlášky
+require_once get_template_directory() . '/inc/prihlaska-nastaveni.php';
+
 //nastavení šablony
 function tabor_sopka_setup_theme(){
      // náhledové obrázky
