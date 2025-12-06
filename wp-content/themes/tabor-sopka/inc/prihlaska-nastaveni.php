@@ -5,7 +5,7 @@
 function ts_prihlaska_nastaveni(){
     add_menu_page(
         'Přihláška - nastavení režimu',
-        'Přihláška',
+        'Režim přihlášky',
         'manage_options',
         'ts_prihlaska',
         'ts_prihlaska_nastaveni_html',
@@ -66,6 +66,4 @@ function ts_prihlaska_nastaveni_html(){
         </form>
     </div>
     <?php
-
-
 }

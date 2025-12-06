@@ -3,6 +3,9 @@
 //načtení sekce nastevení přihlášky
 require_once get_template_directory() . '/inc/prihlaska-nastaveni.php';
 
+//načtení sekce controller přihlášky
+require_once get_template_directory() . '/inc/prihlaska-controller.php';
+
 //nastavení šablony
 function tabor_sopka_setup_theme(){
      // náhledové obrázky
@@ -66,4 +69,84 @@ function ts_enqueue_prihlaska_js(){
     }
 }
 add_action('wp_enqueue_scripts', 'ts_enqueue_prihlaska_js');
+
+//vytvoření custom post type pro přihlášky
+function ts_register_prihlaska_cpt(){
+    $labels = array(
+        'name' => 'Přihlášky',
+        'singular_name' => 'Přihláška',
+        'menu_name' => 'Přihlášky',
+        'add_new' => 'Přidat novou',
+        'add_new_item' => 'Přidat novou přihlášku',
+        'new_item' => 'Nová přihláška',
+        'edit_item' => 'Upravit přihlášku',
+        'view_item' => 'Zobrazit přihlášku',
+        'all_items' => 'Všechny přihlášky',
+        'search_items' => 'Hledat přihlášky',
+        'not_found' => 'Žádné přihlášky nenalezeny.',
+        'not_found_in_trash' => 'Žádné přihlášky v koši.',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_icon' => 'dashicons-forms', 
+        'menu_position' => 21,
+        'supports' => ['title'],
+    );
+
+    register_post_type('prihlaska', $args);
+}
+add_action('init', 'ts_register_prihlaska_cpt');
+
+function ts_prihlaska_add_meta_box(){
+    add_meta_box(
+        'ts_prihlaska_details',
+        'Detaily přihlášky',
+        'ts_prihlaska_render_meta_box',
+        'prihlaska',
+        'normal',
+        'default'
+    );
+}
+add_action('add_meta_boxes', 'ts_prihlaska_add_meta_box');
+
+function ts_prihlaska_render_meta_box($post){
+    $data = get_post_meta($post->ID);
+    
+    $map = [
+        'z1_jmeno'       => 'Zástupce 1 - jméno',
+        'z1_bydliste'    => 'Zástupce 1 - bydliště',
+        'z1_email'       => 'Zástupce 1 - e-mail',
+        'z1_telefon'     => 'Zástupce 1 - telefon',
+        'z2_jmeno'       => 'Zástupce 2 - jméno',
+        'z2_bydliste'    => 'Zástupce 2 - bydliště',
+        'z2_email'       => 'Zástupce 2 - e-mail',
+        'z2_telefon'     => 'Zástupce 2 - telefon',
+        'dite_jmeno'     => 'Dítě - jméno',
+        'dite_prijmeni'  => 'Dítě - příjmení',
+        'dite_bydliste'  => 'Dítě - bydliště',
+        'dite_narozeni'  => 'Dítě - datum narození',
+        'dite_trida'     => 'Dítě - vychází ze třídy',
+        'dite_doplneni'  => 'Doplňující informace o dítěti',
+        'oddil_jmeno1'   => 'Oddíl - kamarád 1',
+        'oddil_jmeno2'   => 'Oddíl - kamarád 2',
+        'doprava_tam'    => 'Doprava na tábor',
+        'doprava_zpet'   => 'Doprava z tábora',
+        'fakturace'      => 'Fakturace - ano/ne',
+        'fakturace_ico'  => 'Fakturace - IČO',
+        'fakturace_doplneni' => 'Fakturace - doplňující údaje',
+    ];
+    echo '<table class="form-table">';
+    foreach($map as $key => $label){
+        $value = isset($data[$key][0]) ? $data[$key][0] : '';
+        if($key === 'fakturace'){
+            $value = $value ? 'Ano' : 'Ne';
+        }
+        echo '<tr><th>' . esc_html($label) . '</th><td>' . esc_html($value) . '</td></tr>';
+    }
+    echo '</table>';
+}
 ?>

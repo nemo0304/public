@@ -23,6 +23,27 @@ $nahradnici = ($rezim === 'nahradnici');
             <!-- vložit metadata na začátek? - termín, cena atd..? -->
 
             <form class="prihlaska-form" method="post" action="">
+                <?php
+                $prihlaska_status = $_GET['prihlaska_status'] ?? '';
+                if ($prihlaska_status === 'chyba') {
+
+                    $errors = get_transient('ts_prihlaska_errors');
+                    $old_data = get_transient('ts_prihlaska_old_data') ?: [];
+
+
+                    if (!empty($errors)) {
+                        echo '<div class="alert alert-danger mb-4"><ul>';
+                        foreach ($errors as $error) {
+                            echo '<li>' . esc_html($error) . '</li>';
+                        }
+                        echo '</ul></div>';
+                    }
+                }
+                
+                // přidání nonce pole pro zabezpečení formuláře
+                wp_nonce_field('ts_odeslat_prihlasku', 'ts_prihlaska_nonce'); 
+                ?>
+                
 
                 <!-- Zákonný zástupce č.1 -->
                 <section class="prihlaska-sekce mb-4">
@@ -93,8 +114,8 @@ $nahradnici = ($rezim === 'nahradnici');
                             <div class="form-text">Formát: Příjmení</div>
                         </div>
                         <div class="col-md-6">
-                            <label for="zastupce2-bydliste" class="form-label form-label--required">Trvalé bydliště</label>
-                            <input type="text" class="form-control" id="zastupce2-bydliste" name="zastupce2-bydliste" placeholder="Vyplňte">
+                            <label for="dite-bydliste" class="form-label form-label--required">Trvalé bydliště</label>
+                            <input type="text" class="form-control" id="dite-bydliste" name="dite-bydliste" placeholder="Vyplňte">
                             <div class="form-text">Formát: Ulice 123 PSČ Město</div>
                         </div>
                         <div class="col-md-6">
